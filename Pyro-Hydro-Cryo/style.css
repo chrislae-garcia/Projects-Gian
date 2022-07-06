@@ -38,7 +38,7 @@ body {
   gap: 25px;
 }
 
-input {
+.attack-elements > * {
   width: 80px;
   height: auto;
 }
