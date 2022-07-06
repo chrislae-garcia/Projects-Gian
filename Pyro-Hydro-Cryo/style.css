@@ -34,6 +34,17 @@ body {
   gap: 100px;
 }
 
+[class$="-life"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 125px;
+  width: 50px;
+  background-color: #515253;
+  border-radius: 10px;
+}
+
 .thumbnail {
   width: 200px;
   height: auto;
