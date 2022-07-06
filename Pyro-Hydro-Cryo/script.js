@@ -16,4 +16,12 @@ function enemyAttack() {
   }
 }
 
+playerPyro.addEventListener('click', () => {
+  playerAttack('Pyro');
+});
+
+function playerAttack(playerElement) {
+  console.log(playerElement);
+}
+
 console.log(enemyAttack());
