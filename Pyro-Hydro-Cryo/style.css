@@ -14,17 +14,27 @@ body {
 
 .container {
   display: flex;
+  justify-content: space-evenly;
+  gap: 40%;
+  margin-top: 56px;
 }
 
 .player, .computer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #515253;
+  border-radius: 10px;
+  padding: 48px;
 }
 
 .thumbnail {
   width: 200px;
   height: auto;
+}
+
+.attack-elements {
+  display: flex;
 }
 
 input {
