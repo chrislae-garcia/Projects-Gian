@@ -16,11 +16,13 @@ function enemyAttack() {
   }
 }
 
-playerPyro.addEventListener('click', () => { playerAttack('Pyro'); });
-playerHydro.addEventListener('click', () => { playerAttack('Hydro'); });
-playerCryo.addEventListener('click', () => { playerAttack('Cryo'); });
+playerPyro.addEventListener('click', () => { playRound('Pyro'); });
+playerHydro.addEventListener('click', () => { playRound('Hydro'); });
+playerCryo.addEventListener('click', () => { playRound('Cryo'); });
 
-function playerAttack(playerElement) {
+function playRound(playerElement) {
+  
+  
   console.log(playerElement);
 }
 
