@@ -43,6 +43,15 @@ body {
   width: 50px;
   background-color: #515253;
   border-radius: 10px;
+  gap: 6px;
+  padding: 6px;
+}
+
+[class$="-life"] > div {
+  background-color: greenyellow;
+  height: 20px;
+  width: 50px;
+  border-radius: 5px;
 }
 
 .thumbnail {
