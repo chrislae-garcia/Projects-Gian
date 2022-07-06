@@ -16,14 +16,15 @@ function enemyAttack() {
   }
 }
 
-playerPyro.addEventListener('click', () => { playRound('Pyro'); });
-playerHydro.addEventListener('click', () => { playRound('Hydro'); });
-playerCryo.addEventListener('click', () => { playRound('Cryo'); });
-
-function playRound(playerElement) {
+function playRound(playerElement, enemyElement) {
   
+  const playerAttack = playerElement;
+  const enemyAttack = enemyElement;
   
-  console.log(playerElement);
+  console.log(`${playerAttack}, ${enemyAttack}`);
 }
 
-console.log(enemyAttack());
+// console.log(enemyAttack());
+playerPyro.addEventListener('click', () => { playRound('Pyro', enemyAttack()); });
+playerHydro.addEventListener('click', () => { playRound('Hydro', enemyAttack()); });
+playerCryo.addEventListener('click', () => { playRound('Cryo', enemyAttack()); });
