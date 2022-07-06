@@ -16,9 +16,9 @@ function enemyAttack() {
   }
 }
 
-playerPyro.addEventListener('click', () => {
-  playerAttack('Pyro');
-});
+playerPyro.addEventListener('click', () => { playerAttack('Pyro'); });
+playerHydro.addEventListener('click', () => { playerAttack('Hydro'); });
+playerCryo.addEventListener('click', () => { playerAttack('Cryo'); });
 
 function playerAttack(playerElement) {
   console.log(playerElement);
