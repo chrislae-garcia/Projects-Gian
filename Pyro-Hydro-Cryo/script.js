@@ -16,8 +16,8 @@ function enemyAttack() {
   }
 }
 
-let playerScore = 0;
-let enemyScore = 0;
+let playerLife = 5;
+let enemyLife = 5;
 let round = 1;
 function playRound(playerElement, enemyElement) {
   
@@ -29,14 +29,14 @@ function playRound(playerElement, enemyElement) {
   } else if ((playerAttack == 'Pyro' && enemyAttack == 'Hydro')
   ||  (playerAttack == 'Hydro' && enemyAttack == 'Cryo') 
   ||  (playerAttack == 'Cryo' && enemyAttack == 'Pyro')) {
-    enemyScore++;
+    playerLife--;
     console.log(`Enemy wins round ${round}`);
   } else {
-    playerScore++;
+    enemyLife--;
     console.log(`Player wins round ${round}`);
   }
   round++;
-  console.log(`Player: ${playerScore}. Enemy: ${enemyScore}`);
+  console.log(`Player: ${playerLife}. Enemy: ${enemyLife}`);
 }
 
 // console.log(enemyAttack());
