@@ -16,12 +16,27 @@ function enemyAttack() {
   }
 }
 
+let playerScore = 0;
+let enemyScore = 0;
+let round = 1;
 function playRound(playerElement, enemyElement) {
   
   const playerAttack = playerElement;
   const enemyAttack = enemyElement;
   
-  console.log(`${playerAttack}, ${enemyAttack}`);
+  if (playerAttack == enemyAttack) {
+    console.log('Draw!');
+  } else if ((playerAttack == 'Pyro' && enemyAttack == 'Hydro')
+  ||  (playerAttack == 'Hydro' && enemyAttack == 'Cryo') 
+  ||  (playerAttack == 'Cryo' && enemyAttack == 'Pyro')) {
+    enemyScore++;
+    console.log(`Enemy wins round ${round}`);
+  } else {
+    playerScore++;
+    console.log(`Player wins round ${round}`);
+  }
+  round++;
+  console.log(`Player: ${playerScore}. Enemy: ${enemyScore}`);
 }
 
 // console.log(enemyAttack());
