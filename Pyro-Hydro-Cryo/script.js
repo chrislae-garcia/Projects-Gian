@@ -26,6 +26,14 @@ function updateLife(damaged, life) {
   lifeBar.remove();
 }
 
+function highlightAttack(playerAttack, enemyAttack) {
+  const playerSelected = document.getElementById(`player-${playerAttack.toLowerCase()}`);
+  const enemySelected = document.getElementById(`enemy-${enemyAttack.toLowerCase()}`);
+  
+  playerSelected.classList.add(`${playerAttack.toLowerCase()}-selected`);
+  enemySelected.classList.add(`${enemyAttack.toLowerCase()}-selected`);
+}
+
 let playerLife = 5;
 let enemyLife = 5;
 let round = 1;
@@ -47,6 +55,7 @@ function playRound(playerElement, enemyElement) {
     updateLife('enemy', enemyLife);
     console.log(`Player wins round ${round}`);
   }
+  highlightAttack(playerAttack, enemyAttack); 
   round++;
   divRound.textContent = `Round ${round}`;
   
