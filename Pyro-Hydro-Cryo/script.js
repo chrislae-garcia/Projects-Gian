@@ -59,19 +59,23 @@ function playRound(playerElement, enemyElement) {
 
 function gameStart(e) {
   const playerAttack = e.target.id;
-  
-  switch (playerAttack) {
-    case 'player-pyro':
-      playRound('Pyro', enemyAttack());
-      break;
-    case 'player-hydro':
-      playRound('Hydro', enemyAttack());
-      break;
-    case 'player-cryo':
-      playRound('Cryo', enemyAttack());
-      break;
-    default:
-      return;
+
+  if ((playerLife == 0) || (enemyLife == 0)) {
+    return;
+  } else {
+    switch (playerAttack) {
+      case 'player-pyro':
+        playRound('Pyro', enemyAttack());
+        break;
+      case 'player-hydro':
+        playRound('Hydro', enemyAttack());
+        break;
+      case 'player-cryo':
+        playRound('Cryo', enemyAttack());
+        break;
+      default:
+        return;
+    }
   }
 }
 
