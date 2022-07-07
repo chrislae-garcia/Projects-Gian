@@ -31,7 +31,7 @@ body {
 .life-container {
   display: flex;
   align-items: center;
-  gap: 100px;
+  gap: 3em;
 }
 
 [class$="-life"] {
@@ -45,6 +45,12 @@ body {
   border-radius: 10px;
   gap: 6px;
   padding: 6px;
+}
+
+.round {
+  align-self: flex-start;
+  margin-top: 20px;
+  font-size: 46px;
 }
 
 [class$="-life"] > div {
