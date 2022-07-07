@@ -16,6 +16,10 @@ function enemyAttack() {
   }
 }
 
+function updateLife(damaged) {
+
+}
+
 let playerLife = 5;
 let enemyLife = 5;
 let round = 1;
@@ -30,9 +34,11 @@ function playRound(playerElement, enemyElement) {
   ||  (playerAttack == 'Hydro' && enemyAttack == 'Cryo') 
   ||  (playerAttack == 'Cryo' && enemyAttack == 'Pyro')) {
     playerLife--;
+    updateLife('player');
     console.log(`Enemy wins round ${round}`);
   } else {
     enemyLife--;
+    updateLife('enemy');
     console.log(`Player wins round ${round}`);
   }
   round++;
