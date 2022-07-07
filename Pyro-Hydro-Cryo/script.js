@@ -1,3 +1,5 @@
+const divRound = document.querySelector('div.round');
+
 function enemyAttack() {
   enemyElement = Math.floor(Math.random()*3) + 1;
 
@@ -46,7 +48,8 @@ function playRound(playerElement, enemyElement) {
     console.log(`Player wins round ${round}`);
   }
   round++;
-  console.log(`Player: ${playerLife}. Enemy: ${enemyLife}`);
+  divRound.textContent = `Round ${round}`;
+  
 }
 
 function gameStart(e) {
