@@ -16,8 +16,20 @@ function enemyAttack() {
   }
 }
 
-function updateLife(damaged) {
+function updateLife(damaged, life) {
+  let lifeBar = document.querySelector(`.${damaged}-life>div`);
+  let remainingBar = document.querySelectorAll(`.${damaged}-life>div`);
 
+  if (life < 2) {
+    for(bar of remainingBar) {
+      bar.style.backgroundColor = 'rgb(236, 52, 52)';
+    }
+  } else if (life < 4) {
+    for(bar of remainingBar) {
+      bar.style.backgroundColor = 'rgb(253, 148, 35)';
+    }
+  }
+  lifeBar.remove();
 }
 
 let playerLife = 5;
@@ -34,11 +46,11 @@ function playRound(playerElement, enemyElement) {
   ||  (playerAttack == 'Hydro' && enemyAttack == 'Cryo') 
   ||  (playerAttack == 'Cryo' && enemyAttack == 'Pyro')) {
     playerLife--;
-    updateLife('player');
+    updateLife('player', playerLife);
     console.log(`Enemy wins round ${round}`);
   } else {
     enemyLife--;
-    updateLife('enemy');
+    updateLife('enemy', enemyLife);
     console.log(`Player wins round ${round}`);
   }
   round++;
