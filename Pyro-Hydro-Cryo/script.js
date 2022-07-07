@@ -57,7 +57,27 @@ function playRound(playerElement, enemyElement) {
   console.log(`Player: ${playerLife}. Enemy: ${enemyLife}`);
 }
 
+function gameStart(e) {
+  const playerAttack = e.target.id;
+  
+  switch (playerAttack) {
+    case 'player-pyro':
+      playRound('Pyro', enemyAttack());
+      break;
+    case 'player-hydro':
+      playRound('Hydro', enemyAttack());
+      break;
+    case 'player-cryo':
+      playRound('Cryo', enemyAttack());
+      break;
+    default:
+      return;
+  }
+}
+
 // console.log(enemyAttack());
-playerPyro.addEventListener('click', () => { playRound('Pyro', enemyAttack()); });
-playerHydro.addEventListener('click', () => { playRound('Hydro', enemyAttack()); });
-playerCryo.addEventListener('click', () => { playRound('Cryo', enemyAttack()); });
+// playerPyro.addEventListener('click', () => { playRound('Pyro', enemyAttack()); });
+// playerHydro.addEventListener('click', () => { playRound('Hydro', enemyAttack()); });
+// playerCryo.addEventListener('click', () => { playRound('Cryo', enemyAttack()); });
+
+window.addEventListener('click', gameStart);
