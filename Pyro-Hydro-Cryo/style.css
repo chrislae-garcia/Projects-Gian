@@ -68,6 +68,22 @@ body {
 .attack-elements {
   display: flex;
   gap: 25px;
+  transition: all .07s ease;
+}
+
+.pyro-selected {
+  transform: scale(1.1);
+  box-shadow: 0 0 5px 5px rgba(240, 66, 13, 0.917);
+}
+
+.hydro-selected {
+  transform: scale(1.1);
+  box-shadow: 0 0 5px 5px rgba(75, 173, 234, 0.917);
+}
+
+.cryo-selected {
+  transform: scale(1.1);
+  box-shadow: 0 0 5px 5px rgba(141, 253, 255, 0.917);
 }
 
 .attack-elements > * {
