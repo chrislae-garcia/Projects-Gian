@@ -54,6 +54,8 @@ function playRound(playerElement, enemyElement) {
   const playerAttack = playerElement;
   const enemyAttack = enemyElement;
   
+  divRound.textContent = `Round ${round}`;
+  
   if (playerAttack == enemyAttack) {
     divWinner.textContent = `Round ${round}: Draw!`;
   } else if ((playerAttack == 'Pyro' && enemyAttack == 'Hydro')
@@ -69,9 +71,7 @@ function playRound(playerElement, enemyElement) {
   }
   highlightAttack(playerAttack, enemyAttack); 
   round++;
-  divScreen.appendChild(divWinner);
-  divRound.textContent = `Round ${round}`;
-  
+  divScreen.appendChild(divWinner);  
 }
 
 function gameStart(e) {
