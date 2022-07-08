@@ -1,4 +1,5 @@
 const divRound = document.querySelector('div.round');
+const divScreen = document.querySelector('.screen');
 
 function enemyAttack() {
   enemyElement = Math.floor(Math.random()*3) + 1;
@@ -49,25 +50,26 @@ let playerLife = 5;
 let enemyLife = 5;
 let round = 1;
 function playRound(playerElement, enemyElement) {
-  
+  const divWinner = document.createElement('div');
   const playerAttack = playerElement;
   const enemyAttack = enemyElement;
   
   if (playerAttack == enemyAttack) {
-    console.log('Draw!');
+    divWinner.textContent = `Round ${round}: Draw!`;
   } else if ((playerAttack == 'Pyro' && enemyAttack == 'Hydro')
   ||  (playerAttack == 'Hydro' && enemyAttack == 'Cryo') 
   ||  (playerAttack == 'Cryo' && enemyAttack == 'Pyro')) {
     playerLife--;
     updateLife('player', playerLife);
-    console.log(`Enemy wins round ${round}`);
+    divWinner.textContent = `Round ${round}: Enemy wins. ${enemyAttack} beats ${playerAttack}`;
   } else {
     enemyLife--;
     updateLife('enemy', enemyLife);
-    console.log(`Player wins round ${round}`);
+    divWinner.textContent += `Round ${round}: You win. ${playerAttack} beats ${enemyAttack}`;
   }
   highlightAttack(playerAttack, enemyAttack); 
   round++;
+  divScreen.appendChild(divWinner);
   divRound.textContent = `Round ${round}`;
   
 }
@@ -75,7 +77,7 @@ function playRound(playerElement, enemyElement) {
 function gameStart(e) {
   const playerAttack = e.target.className;
 
-  if ((playerLife == 0) || (enemyLife == 0)) { return; } 
+  if ((playerLife == 0) || (enemyLife == 0)) return; 
   
   switch (true) {
     case playerAttack.includes('player-pyro'):
