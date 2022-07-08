@@ -27,11 +27,11 @@ function updateLife(damaged, life) {
 }
 
 function highlightAttack(playerAttack, enemyAttack) {
-  const playerSelected = document.getElementById(`player-${playerAttack.toLowerCase()}`);
-  const enemySelected = document.getElementById(`enemy-${enemyAttack.toLowerCase()}`);
+  const playerSelected = document.querySelector(`.player-${playerAttack.toLowerCase()}`);
+  const enemySelected = document.querySelector(`.enemy-${enemyAttack.toLowerCase()}`);
   
-  playerSelected.classList.add(`${playerAttack.toLowerCase()}-selected`);
-  enemySelected.classList.add(`${enemyAttack.toLowerCase()}-selected`);
+  // playerSelected.classList.add(`${playerAttack.toLowerCase()}-selected`);
+  // enemySelected.classList.add(`${enemyAttack.toLowerCase()}-selected`);
 }
 
 let playerLife = 5;
@@ -62,7 +62,8 @@ function playRound(playerElement, enemyElement) {
 }
 
 function gameStart(e) {
-  const playerAttack = e.target.id;
+  const playerAttack = e.target.className;
+  console.log(playerAttack);
 
   if ((playerLife == 0) || (enemyLife == 0)) {
     return;
