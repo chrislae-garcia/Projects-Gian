@@ -30,8 +30,13 @@ function highlightAttack(playerAttack, enemyAttack) {
   const playerSelected = document.querySelector(`.player-${playerAttack.toLowerCase()}`);
   const enemySelected = document.querySelector(`.enemy-${enemyAttack.toLowerCase()}`);
   
-  // playerSelected.classList.add(`${playerAttack.toLowerCase()}-selected`);
-  // enemySelected.classList.add(`${enemyAttack.toLowerCase()}-selected`);
+  playerSelected.classList.add(`${playerAttack.toLowerCase()}-selected`);
+  enemySelected.classList.add(`${enemyAttack.toLowerCase()}-selected`);
+}
+
+function removeSelection(e){
+  if(e.propertyName != 'transform') return;
+  this.classList.remove(this.classList[1]);
 }
 
 let playerLife = 5;
@@ -59,11 +64,12 @@ function playRound(playerElement, enemyElement) {
   round++;
   divRound.textContent = `Round ${round}`;
   
+  const attackElements = document.querySelectorAll('.attack-elements>*');
+  attackElements.forEach(attackElement => attackElement.addEventListener('transitionend', removeSelection));
 }
 
 function gameStart(e) {
   const playerAttack = e.target.className;
-  console.log(playerAttack);
 
   if ((playerLife == 0) || (enemyLife == 0)) {
     return;
