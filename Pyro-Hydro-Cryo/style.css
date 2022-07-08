@@ -49,6 +49,8 @@ body {
 
 .round {
   align-self: flex-start;
+  width: 250px;
+  text-align: center;
   margin-top: 20px;
   font-size: 46px;
 }
