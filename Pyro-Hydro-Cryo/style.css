@@ -93,3 +93,12 @@ body {
 .combat-log {
   margin-top: 50px;
 }
+
+.screen {
+  height: 10em;
+  width: 40em;
+  background-color: #515253;
+  z-index: -1;
+  border-radius: 20px;
+  
+}
