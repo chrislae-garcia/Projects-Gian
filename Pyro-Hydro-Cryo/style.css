@@ -68,7 +68,6 @@ body {
 .attack-elements {
   display: flex;
   gap: 25px;
-  transition: all .07s ease;
 }
 
 .pyro-selected {
@@ -89,6 +88,7 @@ body {
 .attack-elements > * {
   width: 80px;
   height: auto;
+  transition: all 0.04s ease;
 }
 
 .combat-log {
